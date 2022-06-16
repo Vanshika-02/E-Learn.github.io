@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 12th </title>
+
+  <link rel="shortcut icon" type="image" href="../images/logo_2.png">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/fontawesome.css" rel="stylesheet">
+  <style>
+    /*Card Starts*/
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      text-align: center;
+      font-family: arial;
+      display: inline-block;
+
+    }
+
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+
+    button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 22px;
+      color: black;
+    }
+
+    button:hover,
+    a:hover {
+      opacity: 0.7;
+    }
+
+    /*  Card ends*/
+    * {
+      font-family: 'Poppins', sans-serif !important;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: -moz-none;
+      -o-user-select: none;
+      user-select: none;
+    }
+
+    /*searchbox*/
+
+    .custom_search {
+      color: #FFF !important;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      border-bottom: 2px solid #FFF;
+      width: 240px !important;
+    }
+
+    .custom_search:focus {
+      box-shadow: none;
+      background: transparent;
+      border-bottom: 2px solid #FFF;
+    }
+
+    .custom_search+.search_span {
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      left: 50%;
+      transition: width 0.5s, left 0.5s;
+    }
+
+    .custom_search:focus+.search_span {
+      width: 240px;
+      left: 0;
+      border-bottom: 2px solid #c128ea;
+    }
+
+    .custom_search::placeholder {
+      color: #FFF !important;
+    }
+
+    .search_button {
+      background: #8e24aa;
+      width: 100px;
+      border: 0;
+    }
+
+    .search_button:focus {
+      border: 0;
+      box-shadow: none;
+    }
+
+    .search_button:active {
+      background: #8e24aa !important;
+      box-shadow: none !important;
+    }
+
+    .search_button:hover {
+      background: #8e24aa;
+    }
+
+    /*ripple effect*/
+
+    .tx--white {
+      color: #fff;
+    }
+
+    [ripple] {
+      position: relative;
+      overflow: hidden;
+    }
+
+    [ripple] .ripple--container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    [ripple] .ripple--container span {
+      transform: scale(0);
+      border-radius: 100%;
+      position: absolute;
+      opacity: 0.30;
+      background-color: #fff;
+      animation: ripple 1000ms;
+    }
+
+    @-moz-keyframes ripple {
+      to {
+        opacity: 0;
+        transform: scale(2);
+      }
+    }
+
+    @-webkit-keyframes ripple {
+      to {
+        opacity: 0;
+        transform: scale(2);
+      }
+    }
+
+    @-o-keyframes ripple {
+      to {
+        opacity: 0;
+        transform: scale(2);
+      }
+    }
+
+    @keyframes ripple {
+      to {
+        opacity: 0;
+        transform: scale(2);
+      }
+    }
+
+    /*navbar*/
+
+    .navbar {
+      background: #222 !important;
+      line-height: 2rem !important;
+    }
+
+    .navbar .navbar-brand {
+      color: #FFF !important;
+    }
+
+    .navbar-nav .active a {
+      color: #c128ea !important;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: #FFF;
+    }
+
+    .dropdown-menu {
+      background: #22221E;
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: #FFF;
+      transition: all 0.2s;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+      background: #8e24aa;
+      color: #FFF;
+    }
+
+    .navbar-toggler-icon {
+      color: #FFF !important;
+    }
+
+    .navbar-dark .navbar-toggler {
+      border-color: #FFFFFF !important;
+    }
+
+    /*Footer css*/
+    .site-footer {
+      background-color: #26272b;
+      padding: 45px 0 20px;
+      font-size: 15px;
+      line-height: 24px;
+      color: #737373;
+    }
+
+    .site-footer hr {
+      border-top-color: #bbb;
+      opacity: 0.5
+    }
+
+    .site-footer hr.small {
+      margin: 20px 0
+    }
+
+    .site-footer h6 {
+      color: #fff;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-top: 5px;
+      letter-spacing: 2px
+    }
+
+    .site-footer a {
+      color: #737373;
+    }
+
+    .site-footer a:hover {
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    .footer-links {
+      padding-left: 0;
+      list-style: none
+    }
+
+    .footer-links li {
+      display: block
+    }
+
+    .footer-links a {
+      color: #737373
+    }
+
+    .footer-links a:active,
+    .footer-links a:focus,
+    .footer-links a:hover {
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    .footer-links.inline li {
+      display: inline-block
+    }
+
+    .site-footer .social-icons {
+      text-align: right
+    }
+
+    .site-footer .social-icons a {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      margin-left: 6px;
+      margin-right: 0;
+      border-radius: 100%;
+      background-color: #33353d
+    }
+
+    .copyright-text {
+      margin: 0
+    }
+
+    @media (max-width:991px) {
+      .site-footer [class^=col-] {
+        margin-bottom: 30px
+      }
+    }
+
+    @media (max-width:767px) {
+      .site-footer {
+        padding-bottom: 0
+      }
+
+      .site-footer .copyright-text,
+      .site-footer .social-icons {
+        text-align: center
+      }
+    }
+
+    .social-icons {
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none
+    }
+
+    .social-icons li {
+      display: inline-block;
+      margin-bottom: 4px
+    }
+
+    .social-icons li.title {
+      margin-right: 15px;
+      text-transform: uppercase;
+      color: #96a2b2;
+      font-weight: 700;
+      font-size: 13px
+    }
+
+    .social-icons a {
+      background-color: #eceeef;
+      color: #818a91;
+      font-size: 16px;
+      display: inline-block;
+      line-height: 44px;
+      width: 44px;
+      height: 44px;
+      text-align: center;
+      margin-right: 8px;
+      border-radius: 100%;
+      -webkit-transition: all .2s linear;
+      -o-transition: all .2s linear;
+      transition: all .2s linear
+    }
+
+    .social-icons a:active,
+    .social-icons a:focus,
+    .social-icons a:hover {
+      color: #fff;
+      background-color: #29aafe
+    }
+
+    .social-icons.size-sm a {
+      line-height: 34px;
+      height: 34px;
+      width: 34px;
+      font-size: 14px
+    }
+
+    .social-icons a.facebook:hover {
+      background-color: #3b5998
+    }
+
+    .social-icons a.twitter:hover {
+      background-color: #00aced
+    }
+
+    .social-icons a.linkedin:hover {
+      background-color: #007bb6
+    }
+
+    .social-icons a.dribbble:hover {
+      background-color: #ea4c89
+    }
+
+    @media (max-width:767px) {
+      .social-icons li.title {
+        display: block;
+        margin-right: 0;
+        font-weight: 600
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+  <!----navbar starts-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="">E-Learn</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Classes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <!-- change it to class list-->
+            <a class="dropdown-item" href="../class_nine/ninth.html">Class 9 <sup>th</sup></a>
+            <a class="dropdown-item" href="../class_tenth/tenth.html">Class 10<sup>th</sup></a>
+            <a class="dropdown-item" href="../class_eleventh/eleventh.html">Class 11<sup>th</sup></a>
+            <a class="dropdown-item" href="#" style="background-color: darkmagenta;">Class 12<sup>th</sup></a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 col-md-4">
+        <div style="position: relative;">
+          <input class="custom_search form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <span class="search_span"></span>
+        </div>
+        <button class="ml-lg-3 btn btn-success my-2 my-sm-0 search_button tx--white" type="button"
+          ripple="ripple">Search</button>
+      </form>
+    </div>
+  </nav>
+  <!---navbar ends-->
+
+
+  <!----body-->
+  <br>
+
+  <center>
+    <div class="card">
+      <img src="../images/maths12.jpg" alt="maths book" style="width:90%" height="300">
+      <h1>Mathematics</h1>
+      <p class="title">NCERT Solutions</p>
+
+      <!--link the pdf of book-->
+      <p> <button style="background-color: antiquewhite;"> <a href="#" style="color: #000000;"> Free & downloadable PDF
+          </a> </button> </p>
+
+      <p><button>FAQs</button></p>
+    </div>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <div class="card">
+      <img src="../images/phy12.jpg" alt="physics book" style="width:90%" height="300">
+      <h1> Physics</h1>
+      <p class="title">NCERT Solutions</p>
+
+      <!--link the pdf of book-->
+      <p> <button style="background-color: antiquewhite;"> <a href="#" style="color: #000000;"> Free & downloadable PDF
+          </a> </button> </p>
+
+      <p><button>FAQs</button></p>
+    </div>
+
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <div class="card">
+      <img src="../images/chem12.jpg" alt="sst book" style="width:90%" height="300">
+      <h1>Chemistry</h1>
+      <p class="title">NCERT Solutions</p>
+
+
+      <p> <button style="background-color: antiquewhite;"> <a href="#" style="color: #000000;"> Free & downloadable PDF
+          </a> </button> </p>
+
+      <p><button>FAQs</button></p>
+    </div>
+  </center>
+
+  <br>
+  <!---body ends-->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script src="script.js">
+    (function () {
+      var cleanUp, debounce, i, len, ripple, rippleContainer, ripples, showRipple;
+
+      debounce = function (func, delay) {
+        var inDebounce;
+        inDebounce = undefined;
+        return function () {
+          var args, context;
+          context = this;
+          args = arguments;
+          clearTimeout(inDebounce);
+          return inDebounce = setTimeout(function () {
+            return func.apply(context, args);
+          }, delay);
+        };
+      };
+
+      showRipple = function (e) {
+        var pos, ripple, rippler, size, style, x, y;
+        ripple = this;
+        rippler = document.createElement('span');
+        size = ripple.offsetWidth;
+        pos = ripple.getBoundingClientRect();
+        x = e.pageX - pos.left - (size / 2);
+        y = e.pageY - pos.top - (size / 2);
+        style = 'top:' + y + 'px; left: ' + x + 'px; height: ' + size + 'px; width: ' + size + 'px;';
+        ripple.rippleContainer.appendChild(rippler);
+        return rippler.setAttribute('style', style);
+      };
+
+      cleanUp = function () {
+        while (this.rippleContainer.firstChild) {
+          this.rippleContainer.removeChild(this.rippleContainer.firstChild);
+        }
+      };
+
+      ripples = document.querySelectorAll('[ripple]');
+
+      for (i = 0, len = ripples.length; i < len; i++) {
+        ripple = ripples[i];
+        rippleContainer = document.createElement('div');
+        rippleContainer.className = 'ripple--container';
+        ripple.addEventListener('mousedown', showRipple);
+        ripple.addEventListener('mouseup', debounce(cleanUp, 2000));
+        ripple.rippleContainer = rippleContainer;
+        ripple.appendChild(rippleContainer);
+      }
+    }());
+  </script>
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6><a name="about">About</a></h6>
+          <p class="text-justify">E-Learn is an NCERT based free online learning, study platform for CBSE students.All
+            the NCERT solutions are simple to understand and help you complete homework from NCERT books easily.
+            Furthermore, these NCERT Solutions are 100% accurate and All NCERT Solutions are explained step-by-step so
+            that you understand quickly. Elearn.com is exactly what you want for all your needs related to NCERT
+            Solutions. It is recommended that you bookmark this website now and use it whenever you are looking for
+            NCERT Solutions. Select your Class and Subject to go to List of Chapters.<i>CODE WANTS TO BE SIMPLE </i></p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Categories</h6>
+          <ul class="footer-links">
+            <li><a href="#">Class 12 <sup>th</sup> </a></li>
+            <li><a href="../class_eleventh/eleventh.html">Class 11 <sup>th</sup> </a></li>
+            <li><a href="../class_tenth/tenth.html">Class 10 <sup>th</sup> </a></li>
+            <li><a href="../class_nine/ninth.html">Class 9 <sup>th</sup> </a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <!--<li><a href="#">Contribute</a></li>-->
+            <li><a href="#">Privacy Policy</a></li>
+
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; All Rights Reserved by
+            <a href="../index.html">E-Learn</a>.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fab fa-twitter-f"> </i></a></li>
+            <li><a class="dribbble" href="#"><i class="fab fa-dribbble-f"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fab fa-linkedin-f"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
